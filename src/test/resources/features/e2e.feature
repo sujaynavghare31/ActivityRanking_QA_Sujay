@@ -16,6 +16,7 @@ Feature: Activity Ranking API - City-Based Weather
     And User enters "Mumbai" into the search field
     Then The search field should contain "Mumbai"
 
+
   @api
   Scenario Outline: Fetch weather and rank activities for a specific city
     Given The user searches for the city "<cityName>"
