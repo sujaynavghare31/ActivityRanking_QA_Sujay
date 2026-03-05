@@ -1,6 +1,4 @@
 package pages;
-
-import dev.failsafe.internal.util.Assert;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -13,11 +11,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.ActionUtils;
 import utils.NetworkLogTracer;
-
 import java.time.Duration;
-
 import static utils.DriverManager.getDriver;
-
 
 public class SearchScreen {
     private ActionUtils actionUtils;
@@ -47,7 +42,8 @@ public class SearchScreen {
 
     public void clickSearchMenu() { searchMenuButton.click(); }
     public void clickDefaultSearch() { defaultSearchButton.click(); }
-    public void enterSearchText(String text) {
+    public void enterSearchText(String text)
+    {
         searchInputBox.click();
         searchInputBox.sendKeys(text);
     }
@@ -76,7 +72,9 @@ public class SearchScreen {
             WebElement selection = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(SUGGESTION_XPATH)));
             selection.click();
 
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             throw e;
         }
     }
